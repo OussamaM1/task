@@ -1,0 +1,8 @@
+go.mod
+go.sum
+*.exe
+*.dll
+*.test
+*.out
+*.mod
+*.sum
