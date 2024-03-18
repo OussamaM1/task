@@ -6,3 +6,4 @@ go.sum
 *.out
 *.mod
 *.sum
+/.idea/
