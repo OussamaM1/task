@@ -3,6 +3,7 @@ package main
 import "github.com/oussamaM1/task/cmd"
 
 func main() {
-	cmd.RootCmd.Execute()
-
+	if err := cmd.RootCommand.Execute(); err != nil {
+		return
+	}
 }

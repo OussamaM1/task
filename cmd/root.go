@@ -1,20 +1,17 @@
 package cmd
 
 import (
-	"fmt"
-	"os"
-
 	"github.com/spf13/cobra"
+	"log"
 )
 
-var RootCmd = &cobra.Command{
+var RootCommand = &cobra.Command{
 	Use:   "task",
-	Short: "task is a Command-line for managing your TODOs build with golang",
+	Short: "task is golang-based Command-line interface designed for efficient management of your TODOs.",
 }
 
 func Execute() {
-	if err := RootCmd.Execute(); err != nil {
-		fmt.Println(err)
-		os.Exit(1)
+	if err := RootCommand.Execute(); err != nil {
+		log.Fatalf(err.Error())
 	}
 }
