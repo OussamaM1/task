@@ -1,9 +1,27 @@
-go.mod
-go.sum
+# Binaries for programs and plugins
 *.exe
+*.exe~
 *.dll
-*.test
-*.out
+*.so
+*.dylib
 *.mod
-*.sum
-/.idea/
+
+# Output files
+*.out
+
+# Go specific
+/bin/
+/pkg/
+/vendor/
+
+# Testing
+/report/
+
+# IDE
+.idea/
+.vscode/
+
+# Dependency directories
+/go.sum
+/go.mod
+
