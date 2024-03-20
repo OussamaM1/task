@@ -1,9 +1,12 @@
 package main
 
-import "github.com/oussamaM1/task/cmd"
+import (
+	"github.com/oussamaM1/task/cmd"
+	"github.com/oussamaM1/task/services"
+)
 
 func main() {
-	if err := cmd.RootCommand.Execute(); err != nil {
-		return
-	}
+	// todo: Open new File if todos not found
+	services.ReadFile()
+	cmd.Execute()
 }
