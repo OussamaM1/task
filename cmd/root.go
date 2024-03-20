@@ -7,7 +7,7 @@ import (
 
 var RootCommand = &cobra.Command{
 	Use:   "task",
-	Short: "task is golang-based Command-line interface designed for efficient management of your TODOs.",
+	Short: "📌 task is golang-based Command-line interface designed for efficient management of your TODOs.",
 }
 
 func Execute() {

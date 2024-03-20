@@ -18,5 +18,5 @@ func init() {
 
 func add(cmd *cobra.Command, args []string) {
 	task := strings.Join(args, " ")
-	fmt.Printf("Added \"%s\" to your task list. \n", task)
+	fmt.Printf("\"%s\" to your task list. \n", task)
 }
