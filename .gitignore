@@ -25,3 +25,6 @@
 /go.sum
 /go.mod
 
+# other files
+.env
+/todos

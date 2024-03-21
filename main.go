@@ -6,7 +6,7 @@ import (
 )
 
 func main() {
-	// todo: Open new File if todos not found
+	services.Logf("Running application in development mode.\n")
 	services.ReadFile()
 	cmd.Execute()
 }
