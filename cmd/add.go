@@ -1,3 +1,4 @@
+// Package cmd provides functionality related to the command line.
 package cmd
 
 import (
@@ -16,7 +17,7 @@ func init() {
 	RootCommand.AddCommand(addCommand)
 }
 
-func add(cmd *cobra.Command, args []string) {
+func add(_ *cobra.Command, args []string) {
 	task := strings.Join(args, " ")
 	fmt.Printf("\"%s\" to your task list. \n", task)
 }

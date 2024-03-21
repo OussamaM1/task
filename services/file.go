@@ -1,3 +1,4 @@
+// Package services provides functionality related to configuration and managing todos file.
 package services
 
 import (
@@ -40,8 +41,4 @@ func WriteFile() {
 	}
 	Logf("\nFile Name: %s", file.Name())
 	Logf("\nLength: %d bytes", length)
-}
-
-func OverwriteFile() {
-
 }

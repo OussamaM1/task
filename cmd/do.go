@@ -1,3 +1,4 @@
+// Package cmd provides functionality related to the command line.
 package cmd
 
 import (
@@ -16,7 +17,7 @@ func init() {
 	RootCommand.AddCommand(doCommand)
 }
 
-func do(cmd *cobra.Command, args []string) {
+func do(_ *cobra.Command, args []string) {
 	var ids []int
 	for _, arg := range args {
 		id, err := strconv.Atoi(arg)

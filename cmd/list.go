@@ -1,3 +1,4 @@
+// Package cmd provides functionality related to the command line.
 package cmd
 
 import (
@@ -18,7 +19,7 @@ func init() {
 	RootCommand.AddCommand(listCommand)
 }
 
-func list(cmd *cobra.Command, args []string) {
+func list(_ *cobra.Command, _ []string) {
 	var todoList []models.Todo
 	todoList = append(todoList, models.Todo{Task: "This is a test task", State: "In-progress"})
 	todoList = append(todoList, models.Todo{Task: "Second task", State: "In-progress"})
