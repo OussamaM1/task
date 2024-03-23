@@ -8,6 +8,6 @@ import (
 
 func main() {
 	services.Logf("Running application in development mode.\n")
-	services.ReadFile()
+	services.WriteFile()
 	cmd.Execute()
 }
