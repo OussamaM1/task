@@ -26,6 +26,6 @@ func init() {
 // Logf logs the message if logging is enabled
 func Logf(format string, args ...interface{}) {
 	if enableLogging {
-		log.Printf(format, args...)
+		log.Printf(format+"\n", args...)
 	}
 }

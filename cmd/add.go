@@ -2,9 +2,8 @@
 package cmd
 
 import (
-	"fmt"
+	"github.com/oussamaM1/task/services"
 	"github.com/spf13/cobra"
-	"strings"
 )
 
 var addCommand = &cobra.Command{
@@ -17,7 +16,6 @@ func init() {
 	RootCommand.AddCommand(addCommand)
 }
 
-func add(_ *cobra.Command, args []string) {
-	task := strings.Join(args, " ")
-	fmt.Printf("\"%s\" to your task list. \n", task)
+func add(_ *cobra.Command, _ []string) {
+	services.Logf("add command called")
 }

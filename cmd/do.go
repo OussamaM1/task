@@ -2,9 +2,8 @@
 package cmd
 
 import (
-	"fmt"
+	"github.com/oussamaM1/task/services"
 	"github.com/spf13/cobra"
-	"strconv"
 )
 
 var doCommand = &cobra.Command{
@@ -17,15 +16,6 @@ func init() {
 	RootCommand.AddCommand(doCommand)
 }
 
-func do(_ *cobra.Command, args []string) {
-	var ids []int
-	for _, arg := range args {
-		id, err := strconv.Atoi(arg)
-		if err != nil {
-			fmt.Println("Cannot convert the argument : ", arg)
-		} else {
-			ids = append(ids, id)
-		}
-	}
-	fmt.Println(ids)
+func do(_ *cobra.Command, _ []string) {
+	services.Logf("do command called")
 }

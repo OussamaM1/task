@@ -27,3 +27,4 @@
 # other files
 .env
 /todos
+/todos.txt
