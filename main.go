@@ -7,7 +7,7 @@ import (
 )
 
 func main() {
-	services.Logf("Running application in development mode.\n")
-	services.WriteFile()
+	services.LogWarn("Running application in development mode.\n")
+	services.OpenFile()
 	cmd.Execute()
 }

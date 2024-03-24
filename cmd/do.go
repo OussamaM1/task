@@ -17,5 +17,5 @@ func init() {
 }
 
 func do(_ *cobra.Command, _ []string) {
-	services.Logf("do command called")
+	services.LogInfo("do command called")
 }
