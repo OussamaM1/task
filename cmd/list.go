@@ -16,6 +16,7 @@ func init() {
 	RootCommand.AddCommand(listCommand)
 }
 
-func list(_ *cobra.Command, _ []string) {
-	services.Logf("List command called")
+func list(cmd *cobra.Command, _ []string) {
+	services.LogInfo("Command called: %s", cmd.Name())
+	services.LogInfo("List of tasks: \n%s", string(services.ReadFile()))
 }

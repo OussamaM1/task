@@ -3,12 +3,22 @@ package services
 
 import (
 	"errors"
+	"fmt"
 	"github.com/joho/godotenv"
 	"log"
 	"os"
 )
 
 var enableLogging bool
+
+const (
+	// white color reset
+	colorReset = "\033[0m"
+	// green color
+	colorGreen = "\033[32m"
+	// yellow color
+	colorYellow = "\033[33m"
+)
 
 // init service - loads environment variables from a .env file and sets the env variable.
 func init() {
@@ -23,9 +33,18 @@ func init() {
 	enableLogging = env == "development"
 }
 
-// Logf logs the message if logging is enabled
-func Logf(format string, args ...interface{}) {
+// LogInfo func - logs info message if logging is enabled
+func LogInfo(format string, args ...interface{}) {
+	format = fmt.Sprintf("%s%s%s\n", colorGreen, format, colorReset)
 	if enableLogging {
-		log.Printf(format+"\n", args...)
+		log.Printf(format, args...)
+	}
+}
+
+// LogWarn func - logs Warning message if logging is enabled
+func LogWarn(format string, args ...interface{}) {
+	format = fmt.Sprintf("%s%s%s\n", colorYellow, format, colorReset)
+	if enableLogging {
+		log.Printf(format, args...)
 	}
 }
