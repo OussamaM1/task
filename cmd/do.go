@@ -16,6 +16,6 @@ func init() {
 	RootCommand.AddCommand(doCommand)
 }
 
-func do(_ *cobra.Command, _ []string) {
-	services.LogInfo("do command called")
+func do(cmd *cobra.Command, _ []string) {
+	services.LogInfo("Command called: %s", cmd.Name())
 }
