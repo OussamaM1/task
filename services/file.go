@@ -2,6 +2,7 @@
 package services
 
 import (
+	"fmt"
 	"log"
 	"os"
 )
@@ -63,5 +64,5 @@ func WriteFile(data []byte) {
 	}
 	LogInfo("File Name: %s", file.Name())
 	LogInfo("Length: %d bytes", length)
-	LogInfo("File Content: \n%s ", string(ReadFile()))
+	fmt.Println(string(ReadFile()))
 }

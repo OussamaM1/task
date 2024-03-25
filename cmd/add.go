@@ -5,8 +5,6 @@ import (
 	"github.com/oussamaM1/task/models"
 	"github.com/oussamaM1/task/services"
 	"github.com/spf13/cobra"
-	"gopkg.in/yaml.v2"
-	"log"
 	"strings"
 )
 
@@ -28,10 +26,5 @@ func add(cmd *cobra.Command, args []string) {
 		model := models.Todo{Task: arg, State: "In-progress"}
 		todoList = append(todoList, model)
 	}
-	// todo: move logic of data to parser package
-	yamlData, err := yaml.Marshal(todoList)
-	if err != nil {
-		log.Fatalf("Failed to marshal YAML: %v", err)
-	}
-	services.WriteFile(yamlData)
+	services.WriteData(todoList)
 }
