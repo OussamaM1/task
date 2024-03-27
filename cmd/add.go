@@ -21,10 +21,12 @@ func init() {
 func add(cmd *cobra.Command, args []string) {
 	services.LogInfo("Command called: %s", cmd.Name())
 	services.LogInfo("Arguments: %s", strings.Join(args, " "))
-	var todoList []models.Todo
+	var id int = services.GenerateNewID()
+	var taskList []models.Task
 	for _, arg := range args {
-		model := models.Todo{Task: arg, State: "In-progress"}
-		todoList = append(todoList, model)
+		model := models.Task{ID: id, Description: arg, State: "In-progress"}
+		taskList = append(taskList, model)
+		id++
 	}
-	services.WriteData(todoList)
+	services.WriteData(taskList)
 }
