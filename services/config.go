@@ -18,6 +18,8 @@ const (
 	colorGreen = "\033[32m"
 	// yellow color
 	colorYellow = "\033[33m"
+	// blue color
+	colorBlue = "\033[34m"
 )
 
 // init service - loads environment variables from a .env file and sets the env variable.
