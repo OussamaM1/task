@@ -2,7 +2,6 @@
 package services
 
 import (
-	"fmt"
 	"log"
 	"os"
 )
@@ -64,5 +63,13 @@ func WriteFile(data []byte) {
 	}
 	LogInfo("File Name: %s", file.Name())
 	LogInfo("Length: %d bytes", length)
-	fmt.Println(string(ReadFile()))
+}
+
+// OverwriteFile func - Empty file content
+func OverwriteFile() {
+	file := OpenFile()
+	err := file.Truncate(0)
+	if err != nil {
+		log.Fatalln("Error truncating file:", err)
+	}
 }

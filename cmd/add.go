@@ -2,6 +2,7 @@
 package cmd
 
 import (
+	"fmt"
 	"github.com/oussamaM1/task/models"
 	"github.com/oussamaM1/task/services"
 	"github.com/spf13/cobra"
@@ -24,9 +25,10 @@ func add(cmd *cobra.Command, args []string) {
 	var id int = services.GenerateNewID()
 	var taskList []models.Task
 	for _, arg := range args {
-		model := models.Task{ID: id, Description: arg, State: "In-progress"}
+		model := models.Task{ID: id, Description: arg, State: "Open"}
 		taskList = append(taskList, model)
 		id++
 	}
 	services.WriteData(taskList)
+	fmt.Println("✅ The task has been successfully added.")
 }

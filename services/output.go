@@ -29,6 +29,8 @@ func stateColor(state string) string {
 		return fmt.Sprintf("%s%s%s\n", colorBlue, state, colorReset)
 	case "Completed":
 		return fmt.Sprintf("%s%s%s\n", colorGreen, state, colorReset)
+	case "Open":
+		return fmt.Sprintf("%s%s%s\n", colorGray, state, colorReset)
 	}
 	return state
 }
