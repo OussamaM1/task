@@ -22,7 +22,7 @@ func list(cmd *cobra.Command, _ []string) {
 	services.LogInfo("List of tasks: ")
 	taskList := services.ReadData()
 	if taskList == nil {
-		fmt.Println("There are currently no tasks available. You can use the \"add\" command to include a new task.")
+		fmt.Println("⚠️ There are currently no tasks available. You can use the \"add\" command to include a new task.")
 	} else {
 		services.PrintTasks(taskList)
 	}
