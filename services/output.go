@@ -12,13 +12,13 @@ import (
 func PrintTasks(taskList []models.Task) {
 	t := table.NewWriter()
 	t.SetOutputMirror(os.Stdout)
-	t.AppendHeader(table.Row{"#", "Description", "State"})
+	t.AppendHeader(table.Row{"ID\t", "\t\tDescription\t\t", "\t\tState\t\t"})
 	t.AppendSeparator()
 	for _, task := range taskList {
 		t.AppendRow([]interface{}{task.ID, task.Description, stateColor(task.State)})
 		t.AppendSeparator()
 	}
-	t.SetStyle(table.StyleLight)
+	t.SetStyle(table.StyleRounded)
 	t.Render()
 }
 
@@ -26,11 +26,11 @@ func PrintTasks(taskList []models.Task) {
 func stateColor(state string) string {
 	switch state {
 	case "In-progress":
-		return fmt.Sprintf("%s%s%s\n", colorBlue, state, colorReset)
+		return fmt.Sprintf("🚀 %s%s%s\n", colorBlue, state, colorReset)
 	case "Completed":
-		return fmt.Sprintf("%s%s%s\n", colorGreen, state, colorReset)
+		return fmt.Sprintf("✅ %s%s%s\n", colorGreen, state, colorReset)
 	case "Open":
-		return fmt.Sprintf("%s%s%s\n", colorGray, state, colorReset)
+		return fmt.Sprintf("📌 %s%s%s\n", colorGray, state, colorReset)
 	}
 	return state
 }
